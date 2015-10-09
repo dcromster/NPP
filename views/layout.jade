@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', rel='stylesheet', media='screen')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
+    .container
+      if messages
+        if messages.error
+          .alert.alert-danger
+            div= messages.error
+        if messages.info
+          .alert.alert-info
+            div= messages.info
+        if messages.success
+          .alert.alert-success
+            div= messages.success
+
+  script(src='http://code.jquery.com/jquery.js')
+  script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
